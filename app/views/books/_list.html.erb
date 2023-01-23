@@ -1,9 +1,11 @@
+<%= flash[:notice] %>
+
 <h2>User info</h2>
-  <%= image_tag current_user.get_profile_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100) %>
   <th>name</th>
-  <th><%= current_user.name %></th>
+  <th><%= @user.name %></th>
   <th>introduction</th>
-  <th><%= current_user.introduction %></th>
+  <th><%= @user.introduction %></th>
   <p><%= link_to "プロ編", edit_user_path(current_user.id)%></p>
 
 <h2>New book</h2>
