@@ -1,20 +1,38 @@
-<%= flash[:notice] %>
 
-<h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <th>name</th>
-  <th><%= @user.name %></th>
-  <th>introduction</th>
-  <th><%= @user.introduction %></th>
-  <p><%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block" do %>
-  <i class="fas fa-user-cog"></i>
-  <% end %>
-  </p>
-<h2>New book</h2>
-  <%= form_with model: book do |f| %>
-    <label>Title</label>
-    <%= f.text_field :title %>
-    <label>Opinion</label>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book' ,class: "btn btn-success"%>
-  <% end %>
+
+  <div class="col-md-3">
+
+    <h2>User info</h2>
+    <%= image_tag @user.get_profile_image(100,100) %>
+    <table class="table">
+      <tr>
+        <th>name</th>
+        <th><%= @user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= @user.introduction %></th>
+      </tr>
+    </table>
+    <p>
+      <%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+    </p>
+    <h2>New book</h2>
+    <%= form_with model: book do |f| %>
+      <div class="form-group">
+          <%= f.label :title %>
+        <div>
+          <%= f.text_field :title %>
+        </div>
+      </div>
+      <div class="form-group">
+          <%= f.label :opinion %>
+        <div>
+          <%= f.text_area :body %>
+        </div>
+      </div>
+      <%= f.submit 'Create Book' ,class: "btn btn-success"%>
+    <% end %>
+  </div>
