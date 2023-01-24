@@ -24,8 +24,9 @@ before_action :baria_user, only: [:edit, :destroy]
 
 
     @books = Book.all
-    # @user = @book.user
     @user = current_user
+    # @bookuser = @book.user
+
   end
 
   def show
