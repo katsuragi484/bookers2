@@ -24,15 +24,18 @@
       <div class="form-group">
           <%= f.label :title %>
         <div>
-          <%= f.text_field :title %>
+          <%= f.text_field :title ,class: "form-control book_title" %>
         </div>
       </div>
       <div class="form-group">
           <%= f.label :opinion %>
         <div>
-          <%= f.text_area :body %>
+          <%= f.text_area :body ,class: "form-control book_body"%>
         </div>
       </div>
       <%= f.submit 'Create Book' ,class: "btn btn-success"%>
     <% end %>
   </div>
+
+
+

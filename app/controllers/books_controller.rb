@@ -29,6 +29,7 @@ before_action :baria_user, only: [:edit, :destroy]
   end
 
   def show
+    @booknew = Book.new
     @book = Book.find(params[:id])
     @user = @book.user
     # @user = current_user
