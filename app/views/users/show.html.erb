@@ -9,6 +9,7 @@
 
     <h2>Books</h2>
 
+    <table class="table">
       <tr>
       <th></th>
       <th>Title</th>
@@ -17,24 +18,24 @@
       </tr>
 
     <% @books.each do |book|%>
-    <table class="table">
       <tr>
         <td>
-          <%= image_tag book.user.get_profile_image(100,100) %>
-        </td>
-        <td>
-          <%= link_to book_path(book.id) do %>
-            <%= book.user.name %>
+          <%= link_to user_path(book.user.id) do %>
+            <%= image_tag book.user.get_profile_image(100,100) %>
           <% end %>
         </td>
         <td>
-          <%= book.title %>
+          <%= link_to book_path(book.id) do %>
+            <%= book.title %>
+          <% end %>
         </td>
+
         <td>
           <%= book.body %>
         </td>
       </tr>
-      </table>
     <% end %>
+          </table>
+
   </div>
 </div>
